@@ -2243,26 +2243,118 @@
                 
                 const label = document.createElement('label');
                 // Merapikan penulisan label (contoh: "img_guru1" jadi "IMG GURU1")
-                label.innerText = key.replace(/_/g, ' ').toUpperCase() + (isImage ? " (URL Gambar)" : ""); 
+                label.innerText = key.replace(/_/g, ' ').toUpperCase() + (isImage ? " (URL Gambar / Upload)" : ""); 
                 
                 // Jika teks aslinya lebih dari 50 huruf, gunakan textarea (kotak besar)
-                let inputEl;
                 if(currentValue.length > 50 && !isImage) {
-                    inputEl = document.createElement('textarea');
+                    const inputEl = document.createElement('textarea');
                     inputEl.rows = 4;
-                } else {
-                    inputEl = document.createElement('input');
+                    inputEl.id = 'input_' + key;
+                    inputEl.value = currentValue;
+                    formGroup.appendChild(label);
+                    formGroup.appendChild(inputEl);
+                } 
+                // Jika Elemen adalah Gambar (Foto)
+                else if(isImage) {
+                    const imgContainer = document.createElement('div');
+                    imgContainer.style.display = 'flex';
+                    imgContainer.style.flexDirection = 'column';
+                    imgContainer.style.gap = '10px';
+                    
+                    // Pilihan 1: Input URL Manual
+                    const inputEl = document.createElement('input');
                     inputEl.type = 'text';
-                    if(isImage) inputEl.placeholder = "Masukkan link gambar (https://...)";
+                    inputEl.id = 'input_' + key;
+                    inputEl.value = currentValue;
+                    inputEl.placeholder = "Pilihan 1: Masukkan link gambar atau gunakan fitur upload di bawah...";
+                    
+                    // Pilihan 2: Upload File
+                    const uploadWrapper = document.createElement('div');
+                    uploadWrapper.style.display = 'flex';
+                    uploadWrapper.style.gap = '10px';
+                    uploadWrapper.style.alignItems = 'center';
+                    
+                    const fileInput = document.createElement('input');
+                    fileInput.type = 'file';
+                    fileInput.accept = 'image/*';
+                    fileInput.id = 'file_' + key;
+                    fileInput.style.flex = "1";
+                    fileInput.style.padding = "8px";
+                    
+                    const uploadBtn = document.createElement('button');
+                    uploadBtn.type = 'button';
+                    uploadBtn.className = 'btn btn-primary';
+                    uploadBtn.style.padding = '10px 15px';
+                    uploadBtn.style.fontSize = '0.85rem';
+                    uploadBtn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Upload Foto';
+                    uploadBtn.onclick = () => handleImageUpload(key);
+                    
+                    uploadWrapper.appendChild(fileInput);
+                    uploadWrapper.appendChild(uploadBtn);
+                    
+                    imgContainer.appendChild(inputEl);
+                    imgContainer.appendChild(uploadWrapper);
+                    
+                    formGroup.appendChild(label);
+                    formGroup.appendChild(imgContainer);
+                } 
+                // Jika input teks biasa (Jabatan, Nama, dll)
+                else {
+                    const inputEl = document.createElement('input');
+                    inputEl.type = 'text';
+                    inputEl.id = 'input_' + key;
+                    inputEl.value = currentValue;
+                    formGroup.appendChild(label);
+                    formGroup.appendChild(inputEl);
                 }
-                
-                inputEl.id = 'input_' + key;
-                inputEl.value = currentValue;
 
-                formGroup.appendChild(label);
-                formGroup.appendChild(inputEl);
                 container.appendChild(formGroup);
             });
+        }
+
+        // --- SISTEM UPLOAD GAMBAR KE DRIVE ---
+        async function handleImageUpload(key) {
+            if(!isAdminLoggedIn) return;
+            
+            const fileInput = document.getElementById('file_' + key);
+            const file = fileInput.files[0];
+            
+            if(!file) {
+                alert("Silakan pilih file foto terlebih dahulu dari perangkat Anda.");
+                return;
+            }
+
+            showLoading(true);
+            try {
+                // Konversi file menjadi format Base64 untuk dikirim ke GAS
+                const reader = new FileReader();
+                reader.onload = async function(e) {
+                    const base64Data = e.target.result.split(',')[1];
+                    
+                    const formData = new URLSearchParams();
+                    formData.append('action', 'uploadImage');
+                    formData.append('password', adminPass);
+                    formData.append('base64', base64Data);
+                    formData.append('filename', file.name);
+                    formData.append('mimeType', file.type);
+
+                    const response = await fetch(GAS_URL, { method: 'POST', body: formData });
+                    const result = await response.json();
+
+                    if(result.status === 'success') {
+                        alert("Berhasil! Foto telah diupload. URL akan otomatis terisi.");
+                        // Isi kolom URL gambar dengan link Google Drive yang baru
+                        document.getElementById('input_' + key).value = result.url;
+                    } else {
+                        alert("Gagal upload foto: " + result.message);
+                    }
+                    showLoading(false);
+                };
+                reader.readAsDataURL(file);
+            } catch (error) {
+                alert("Terjadi kesalahan jaringan saat mengupload foto.");
+                showLoading(false);
+            }
         }
 
         // --- SISTEM SIMPAN DATA KE SPREADSHEET VIA APPS SCRIPT ---
