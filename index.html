@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISI & MISI SEKOLAH DASAR NEGERI KESILIR 02</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Website Resmi SD Negeri Kesilir 02. Informasi Visi, Misi, Profil Sekolah, Guru & Tendik, Jadwal Pelajaran Kelas 1-6, dan Galeri Kegiatan.">
+    <meta name="keywords" content="SDN Kesilir 02, Visi Misi SDN Kesilir 02, Jadwal Pelajaran SDN Kesilir 02, Profil Sekolah Kesilir 02, Jember">
+    <meta name="author" content="SDN KESILIR 02">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SD NEGERI KESILIR 02 - Portal Resmi">
+    <meta property="og:description" content="Portal Informasi Resmi Visi, Misi, Profil, Guru & Tendik, Jadwal Pelajaran, dan Galeri Kegiatan SD Negeri Kesilir 02.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/d/1U4NdqFgPAEg0Zn3azbipAnXg02tJAN3p">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           1. RESET & CSS VARIABLES
+           ========================================================================== */
+        :root {
+            --primary-dark: #0f2b5c;   
+            --primary-medium: #1e40af; 
+            --primary-light: #2563eb;  
+            --accent-blue: #3b82f6;   
+            --sky-blue: #e0f2fe;      
+            --bg-light: #f8fafc;      
+            --text-dark: #1e293b;     
+            --text-muted: #64748b;    
+            --white: #ffffff;
+            --shadow-sm: 0 2px 4px rgba(15, 43, 92, 0.05);
+            --shadow-md: 0 4px 12px rgba(15, 43, 92, 0.08);
+            --shadow-lg: 0 10px 25px rgba(15, 43, 92, 0.12);
+            --transition-speed: 0.3s;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section-padding { padding: 60px 0; }
+        .section-header { text-align: center; margin-bottom: 45px; }
+        .section-badge { display: inline-block; background-color: var(--sky-blue); color: var(--primary-medium); padding: 6px 18px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+        .section-title { font-size: 2.2rem; color: var(--primary-dark); font-weight: 700; margin-bottom: 12px; }
+        .section-subtitle { font-size: 1rem; color: var(--text-muted); max-width: 750px; margin: 0 auto; }
+
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 28px; border-radius: 50px; font-weight: 600; font-size: 0.95rem; transition: all var(--transition-speed) ease; cursor: pointer; border: none; }
+        .btn-primary { background: linear-gradient(135deg, var(--primary-medium), var(--primary-dark)); color: var(--white); box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4); background: linear-gradient(135deg, var(--primary-light), var(--primary-medium)); }
+        .btn-whatsapp { background-color: #25d366; color: var(--white); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+        .btn-whatsapp:hover { background-color: #1ebc57; transform: translateY(-2px); }
+
+        /* HEADER & NAVBAR */
+        .top-bar { background-color: var(--primary-dark); color: var(--white); font-size: 0.85rem; padding: 8px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .top-bar-content { display: flex; justify-content: space-between; align-items: center; }
+        .top-info { display: flex; gap: 20px; }
+        .top-social { display: flex; align-items: center; gap: 12px; }
+        .top-social a { color: var(--white); font-size: 1rem; transition: color 0.2s ease; }
+        .top-social a:hover { color: var(--sky-blue); }
+
+        .navbar { background-color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: var(--shadow-md); transition: all 0.3s ease; }
+        .navbar-container { display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+        .brand-logo { display: flex; align-items: center; gap: 12px; }
+        .brand-logo img { height: 52px; width: auto; object-fit: contain; }
+        .brand-text { display: flex; flex-direction: column; }
+        .brand-name { font-size: 1.15rem; font-weight: 800; color: var(--primary-dark); line-height: 1.2; letter-spacing: -0.5px; }
+        .brand-sub { font-size: 0.75rem; color: var(--primary-light); font-weight: 600; text-transform: uppercase; }
+        .nav-menu { display: flex; align-items: center; gap: 6px; }
+        .nav-link { padding: 9px 14px; font-weight: 500; font-size: 0.88rem; color: var(--text-dark); border-radius: 8px; transition: all var(--transition-speed) ease; }
+        .nav-link:hover { color: var(--primary-medium); background-color: var(--sky-blue); }
+        .nav-link.active { color: var(--white); background-color: var(--primary-medium); font-weight: 600; box-shadow: 0 2px 8px rgba(30, 64, 175, 0.25); }
+        .mobile-toggle { display: none; font-size: 1.5rem; color: var(--primary-dark); cursor: pointer; background: none; border: none; }
+
+        /* SPA CONTAINER */
+        .spa-page { display: none; opacity: 0; transform: translateY(10px); transition: opacity 0.4s ease, transform 0.4s ease; }
+        .spa-page.active { display: block; opacity: 1; transform: translateY(0); }
+
+        /* OTHER SECTIONS (Hero, Visi, Jadwal, etc - Kept compact for clarity) */
+        .hero { background: linear-gradient(135deg, rgba(15, 43, 92, 0.03), rgba(59, 130, 246, 0.08)); padding: 60px 0 80px 0; }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+        .hero-content h1 { font-size: 2.5rem; font-weight: 800; color: var(--primary-dark); line-height: 1.25; margin-bottom: 20px; }
+        .hero-content p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 30px; }
+        .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; }
+        .hero-logo-box { text-align: center; background: var(--white); padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 2px solid var(--sky-blue); }
+        .hero-logo-box img { max-height: 220px; margin: 0 auto 20px auto; filter: drop-shadow(0 8px 12px rgba(0,0,0,0.1)); transition: transform 0.3s ease; }
+        .hero-logo-title { font-size: 1.25rem; font-weight: 700; color: var(--primary-dark); }
+        
+        .kepsek-card { background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); padding: 40px; margin-top: 40px; border-left: 6px solid var(--primary-medium); }
+        .kepsek-grid { display: grid; grid-template-columns: 280px 1fr; gap: 35px; align-items: start; }
+        .kepsek-img { width: 100%; max-width: 260px; height: 330px; object-fit: cover; border-radius: var(--radius-md); box-shadow: var(--shadow-md); border: 4px solid var(--sky-blue); margin-bottom: 12px; }
+        
+        .visi-misi-container { display: flex; flex-direction: column; gap: 40px; }
+        .visi-box { background: linear-gradient(135deg, var(--primary-dark), var(--primary-medium)); color: var(--white); padding: 45px; border-radius: var(--radius-lg); text-align: center; }
+        .visi-box p { font-size: 1.3rem; font-weight: 600; line-height: 1.6; max-width: 900px; margin: 0 auto; font-style: italic; }
+        .misi-list-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .misi-card { background: var(--white); border-radius: var(--radius-md); padding: 28px; box-shadow: var(--shadow-sm); border-top: 4px solid var(--primary-light); display: flex; gap: 20px; }
+        .misi-num { width: 45px; height: 45px; background: var(--sky-blue); color: var(--primary-medium); font-weight: 800; font-size: 1.25rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: var(--white); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 18px rgba(37, 211, 102, 0.5); z-index: 999; }
+        
+        footer { background-color: var(--primary-dark); color: var(--white); padding: 60px 0 20px 0; margin-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; }
+        .footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 20px; text-align: center; font-size: 0.85rem; color: #94a3b8; user-select: none; }
+
+        @media (max-width: 768px) {
+            .top-bar { display: none; }
+            .mobile-toggle { display: block; }
+            .nav-menu { position: absolute; top: 100%; left: 0; width: 100%; background-color: var(--white); flex-direction: column; padding: 20px; display: none; }
+            .nav-menu.active { display: flex; }
+            .hero-grid, .kepsek-grid, .footer-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ==========================================================================
+           ADMIN & MODAL STYLES (HIDDEN FEATURES)
+           ========================================================================== */
+        .admin-modal-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.6); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(5px);
+        }
+        .admin-modal-overlay.active { display: flex; }
+        .admin-login-box {
+            background: #fff; padding: 40px; border-radius: 15px; width: 90%; max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); text-align: center;
+        }
+        .admin-login-box input {
+            width: 100%; padding: 12px; margin: 15px 0; border: 1px solid #ccc; border-radius: 8px; font-size: 16px;
+        }
+        .admin-login-box button { width: 100%; }
+        
+        .admin-panel-container {
+            background: #fff; padding: 30px; border-radius: 12px; box-shadow: var(--shadow-md);
+            margin-bottom: 40px; border-top: 5px solid var(--primary-dark);
+        }
+        .admin-form-group { margin-bottom: 20px; text-align: left;}
+        .admin-form-group label { display: block; font-weight: 600; color: var(--primary-dark); margin-bottom: 8px; }
+        .admin-form-group textarea, .admin-form-group input {
+            width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 0.95rem; resize: vertical;
+        }
+        .hidden-nav { display: none !important; }
+        
+        #loading-overlay {
+            display: none; position: fixed; top:0; left:0; width:100%; height:100%;
+            background: rgba(255,255,255,0.8); z-index: 10000; align-items: center; justify-content: center;
+            font-size: 1.5rem; font-weight: bold; color: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- OVERLAY LOADING -->
+    <div id="loading-overlay">Memproses Data...</div>
+
+    <!-- MODAL LOGIN ADMIN TERSEMBUNYI -->
+    <div class="admin-modal-overlay" id="adminLoginModal">
+        <div class="admin-login-box">
+            <h2 style="color: var(--primary-dark); margin-bottom: 10px;">Login Administrator</h2>
+            <p style="font-size: 0.85rem; color: #666;">Masukkan kata sandi untuk mengakses mode edit.</p>
+            <input type="password" id="adminPassword" placeholder="Kata Sandi Admin">
+            <button class="btn btn-primary" onclick="verifyLogin()">Masuk Mode Edit</button>
+            <button class="btn" style="background: #eee; color: #333; margin-top: 10px;" onclick="closeLoginModal()">Batal</button>
+        </div>
+    </div>
+
+    <!-- NAVBAR UTAMA -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#beranda" class="brand-logo">
+                <img src="https://lh3.googleusercontent.com/d/1U4NdqFgPAEg0Zn3azbipAnXg02tJAN3p" alt="Logo SDN KESILIR 02">
+                <div class="brand-text">
+                    <span class="brand-name" data-cms="nama_sekolah">SDN KESILIR 02</span>
+                    <span class="brand-sub">Sekolah Dasar Negeri</span>
+                </div>
+            </a>
+            <button class="mobile-toggle" id="mobileMenuBtn"><i class="fa-solid fa-bars"></i></button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#beranda" class="nav-link active">Beranda</a></li>
+                <li><a href="#visi-misi" class="nav-link">Visi & Misi</a></li>
+                <!-- Menu admin tersembunyi, muncul setelah login -->
+                <li id="menu-admin" class="hidden-nav"><a href="#admin-dashboard" class="nav-link" style="background: #ef4444; color: white;">Panel Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- ==========================================================================
+             HALAMAN 1: BERANDA
+             ========================================================================== -->
+        <section id="beranda" class="spa-page active">
+            <div class="hero">
+                <div class="container hero-grid">
+                    <div class="hero-content">
+                        <span class="section-badge">Selamat Datang di Portal Resmi</span>
+                        <h1 data-cms="hero_title">VISI & MISI SEKOLAH DASAR NEGERI KESILIR 02</h1>
+                        <p data-cms="hero_desc">Sarana informasi dan publikasi resmi SD Negeri Kesilir 02 untuk mewujudkan pendidikan yang berkualitas, berkarakter, bermutu, dan berorientasi pada perkembangan peserta didik.</p>
+                        <div class="hero-btns">
+                            <a href="#visi-misi" class="btn btn-primary">Pelajari Visi Misi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container section-padding">
+                <div class="kepsek-card">
+                    <div class="kepsek-grid">
+                        <div class="kepsek-text">
+                            <span class="section-badge">Sambutan Pimpinan</span>
+                            <h2 style="color: var(--primary-dark); font-size: 1.8rem; margin-bottom: 15px;" data-cms="sambutan_judul">Selamat Datang di SD Negeri Kesilir 02</h2>
+                            <p style="margin-bottom: 15px;" data-cms="sambutan_p1">Assalamu’alaikum Warahmatullahi Wabarakatuh, Puji syukur kita panjatkan ke hadirat Tuhan Yang Maha Esa atas terwujudnya website resmi ini.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             HALAMAN 2: VISI DAN MISI
+             ========================================================================== -->
+        <section id="visi-misi" class="spa-page">
+            <div class="container section-padding">
+                <div class="section-header">
+                    <h2 class="section-title">Visi dan Misi Lengkap</h2>
+                </div>
+                <div class="visi-misi-container">
+                    <div class="visi-box">
+                        <span style="background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 30px; font-size: 0.85rem; font-weight: 600;">VISI SEKOLAH</span>
+                        <p style="margin-top: 20px;" data-cms="visi_teks">“Terwujudnya peserta didik yang beriman, bertakwah, berakhlak mulia, berbudaya, serta cerdas dan terampil.”</p>
+                    </div>
+                    
+                    <div class="misi-list-grid">
+                        <div class="misi-card">
+                            <div class="misi-num">1</div>
+                            <div class="misi-card-text">
+                                <h4 data-cms="misi_1_judul">Keimanan & Ketakwaan</h4>
+                                <p data-cms="misi_1_teks">Membentuk anak yang beriman dan bertakwa terhadap Tuhan Yang Maha Esa.</p>
+                            </div>
+                        </div>
+                        <div class="misi-card">
+                            <div class="misi-num">2</div>
+                            <div class="misi-card-text">
+                                <h4 data-cms="misi_2_judul">Akhlak Mulia & Budi Luhur</h4>
+                                <p data-cms="misi_2_teks">Membentuk anak yang berakhlak mulia, cerdas dan terampil, serta berbudi luhur.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+             HALAMAN ADMIN (DISAJIKAN HANYA JIKA LOGIN)
+             ========================================================================== -->
+        <section id="admin-dashboard" class="spa-page">
+            <div class="container section-padding">
+                <div class="section-header">
+                    <span class="section-badge" style="background: #ef4444; color: white;">Administrator Area</span>
+                    <h2 class="section-title">Pengaturan Konten Website</h2>
+                    <p class="section-subtitle">Edit teks yang ada di website. Klik tombol simpan di bawah untuk memperbarui database.</p>
+                </div>
+
+                <div class="admin-panel-container" id="adminFormContainer">
+                    <!-- Form dinamis akan di-generate oleh JavaScript di sini -->
+                </div>
+                
+                <div style="text-align: center;">
+                    <button class="btn btn-primary" style="background: #10b981; font-size: 1.1rem; padding: 15px 40px;" onclick="saveCMSData()">
+                        <i class="fa-solid fa-save"></i> Simpan Perubahan ke Database
+                    </button>
+                    <button class="btn btn-primary" style="background: #ef4444; margin-left: 10px;" onclick="logoutAdmin()">Keluar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom" id="footerCopyright" title="Klik 5x untuk akses admin">
+                © 2026 SD Negeri Kesilir 02. Hak Cipta Dilindungi Undang-Undang.
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT UTAMA -->
+    <script>
+        // --- KONFIGURASI URL APPS SCRIPT ---
+        // Ganti URL ini dengan URL Web App Apps Script milik Anda yang dideploy
+        const GAS_URL = "https://script.google.com/macros/s/AKfycbyIy5EXnY6amk0jNuEa9BhvKssNAr9ouxZm-9qRF_dDG6zdSsw0IsCqd8VWlzlqGmY5/exec"; 
+
+        // State & Variabel
+        let cmsData = {};
+        let isAdminLoggedIn = false;
+        let adminPass = "";
+
+        // --- SISTEM SPA (SINGLE PAGE APPLICATION) ---
+        function handleHashChange() {
+            let currentHash = window.location.hash || '#beranda';
+            // Cegah akses admin jika belum login
+            if (currentHash === '#admin-dashboard' && !isAdminLoggedIn) {
+                window.location.hash = '#beranda';
+                return;
+            }
+
+            document.querySelectorAll('.spa-page').forEach(page => page.classList.remove('active'));
+            const targetPage = document.querySelector(currentHash);
+            if (targetPage) targetPage.classList.add('active');
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === currentHash) link.classList.add('active');
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        window.addEventListener('hashchange', handleHashChange);
+
+        // --- FETCH DATA SAAT HALAMAN DIMUAT ---
+        async function loadData() {
+            try {
+                const response = await fetch(GAS_URL + "?action=getData");
+                const result = await response.json();
+                if (result.status === 'success' && result.data) {
+                    cmsData = result.data;
+                    applyDataToHTML();
+                }
+            } catch (error) {
+                console.error("Gagal mengambil data dari server:", error);
+            }
+        }
+
+        // Terapkan data JSON dari server ke elemen HTML yang memiliki data-cms="..."
+        function applyDataToHTML() {
+            const elements = document.querySelectorAll('[data-cms]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-cms');
+                if (cmsData[key]) {
+                    el.innerText = cmsData[key];
+                }
+            });
+        }
+
+        // Muat data di awal
+        window.addEventListener('DOMContentLoaded', () => {
+            handleHashChange();
+            loadData();
+        });
+
+        // --- SISTEM LOGIN TERSEMBUNYI (KLIK FOOTER 5 KALI) ---
+        let clickCount = 0;
+        document.getElementById('footerCopyright').addEventListener('click', () => {
+            clickCount++;
+            if (clickCount >= 5) {
+                document.getElementById('adminLoginModal').classList.add('active');
+                clickCount = 0;
+            }
+            // Reset hitungan jika jeda terlalu lama (3 detik)
+            setTimeout(() => clickCount = 0, 3000); 
+        });
+
+        function closeLoginModal() {
+            document.getElementById('adminLoginModal').classList.remove('active');
+            document.getElementById('adminPassword').value = '';
+        }
+
+        // Proses Login
+        async function verifyLogin() {
+            const pass = document.getElementById('adminPassword').value;
+            if(!pass) return alert("Masukkan kata sandi!");
+            
+            showLoading(true);
+            try {
+                const formData = new URLSearchParams();
+                formData.append('action', 'login');
+                formData.append('password', pass);
+
+                const response = await fetch(GAS_URL, { method: 'POST', body: formData });
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    isAdminLoggedIn = true;
+                    adminPass = pass; // Simpan token sesi lokal
+                    closeLoginModal();
+                    
+                    // Tampilkan Menu Admin dan Pindah Halaman
+                    document.getElementById('menu-admin').classList.remove('hidden-nav');
+                    window.location.hash = '#admin-dashboard';
+                    
+                    // Generate Form Admin
+                    generateAdminForm();
+                } else {
+                    alert("Kata sandi salah!");
+                }
+            } catch (err) {
+                alert("Terjadi kesalahan jaringan.");
+            }
+            showLoading(false);
+        }
+
+        function logoutAdmin() {
+            isAdminLoggedIn = false;
+            adminPass = "";
+            document.getElementById('menu-admin').classList.add('hidden-nav');
+            window.location.hash = '#beranda';
+            alert("Anda telah keluar dari mode admin.");
+        }
+
+        // --- SISTEM PEMBUATAN FORM ADMIN DINAMIS ---
+        function generateAdminForm() {
+            const container = document.getElementById('adminFormContainer');
+            container.innerHTML = '';
+            
+            // Cari semua elemen ber-atribut data-cms di seluruh web
+            const editableElements = document.querySelectorAll('[data-cms]');
+            let addedKeys = [];
+
+            editableElements.forEach(el => {
+                const key = el.getAttribute('data-cms');
+                if(addedKeys.includes(key)) return; // Hindari duplikat form
+                addedKeys.push(key);
+
+                // Ambil value saat ini, kalau dari DB kosong, ambil dari HTML aslinya
+                const currentValue = cmsData[key] || el.innerText;
+
+                const formGroup = document.createElement('div');
+                formGroup.className = 'admin-form-group';
+                
+                const label = document.createElement('label');
+                // Merapikan label (misal: "misi_1_judul" jadi "Misi 1 Judul")
+                label.innerText = key.replace(/_/g, ' ').toUpperCase(); 
+                
+                // Gunakan textarea jika teks aslinya panjang (lebih dari 40 karakter)
+                let inputEl;
+                if(currentValue.length > 50) {
+                    inputEl = document.createElement('textarea');
+                    inputEl.rows = 4;
+                } else {
+                    inputEl = document.createElement('input');
+                    inputEl.type = 'text';
+                }
+                
+                inputEl.id = 'input_' + key;
+                inputEl.value = currentValue;
+
+                formGroup.appendChild(label);
+                formGroup.appendChild(inputEl);
+                container.appendChild(formGroup);
+            });
+        }
+
+        // --- SISTEM SIMPAN DATA KE SPREADSHEET VIA APPS SCRIPT ---
+        async function saveCMSData() {
+            if(!isAdminLoggedIn) return;
+            
+            // Kumpulkan data dari form admin
+            const newCmsData = {};
+            const inputs = document.querySelectorAll('.admin-form-group input, .admin-form-group textarea');
+            
+            inputs.forEach(input => {
+                const key = input.id.replace('input_', '');
+                newCmsData[key] = input.value;
+            });
+
+            showLoading(true);
+            try {
+                const formData = new URLSearchParams();
+                formData.append('action', 'save');
+                formData.append('password', adminPass);
+                formData.append('data', JSON.stringify(newCmsData));
+
+                const response = await fetch(GAS_URL, { method: 'POST', body: formData });
+                const result = await response.json();
+
+                if(result.status === 'success') {
+                    alert("Data berhasil diperbarui!");
+                    cmsData = newCmsData; // Update state lokal
+                    applyDataToHTML();    // Terapkan teks baru ke web langsung
+                } else {
+                    alert("Gagal menyimpan: " + result.message);
+                }
+            } catch (error) {
+                alert("Terjadi kesalahan jaringan saat menyimpan data.");
+            }
+            showLoading(false);
+        }
+
+        function showLoading(show) {
+            document.getElementById('loading-overlay').style.display = show ? 'flex' : 'none';
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+            document.getElementById('navMenu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
